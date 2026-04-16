@@ -169,6 +169,14 @@ ul { list-style: none; }
   margin-bottom: 1rem;
 }
 
+.hero-motto {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
 .hero-title {
   font-size: 2.25rem;
   font-weight: 800;
@@ -383,33 +391,65 @@ ul { list-style: none; }
   color: var(--text-muted);
 }
 
-/* ── 10. Screenshot gallery ─────────────────────────────────── */
-.screenshot-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+/* ── 10. Screenshot carousel ────────────────────────────────── */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin-top: 1.25rem;
 }
 
-.screenshot-gallery figure {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+.carousel-track-wrapper {
   overflow: hidden;
-  box-shadow: var(--shadow);
+  flex: 1;
+  border-radius: var(--radius);
 }
 
-.screenshot-gallery img {
+.carousel-track {
+  display: flex;
+  transition: transform 0.35s ease;
+}
+
+.carousel-slide {
+  flex: 0 0 calc(100% / 3);
+  padding: 0 0.375rem;
+  margin: 0;
+}
+
+.carousel-slide img {
   width: 100%;
   height: auto;
   display: block;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.screenshot-gallery figcaption {
-  font-size: 0.8rem;
-  color: var(--text-subtle);
-  padding: 0.6rem 0.8rem;
-  text-align: center;
+.carousel-btn {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
 /* Placeholder shown when no real screenshot is present */
@@ -700,9 +740,6 @@ ul { list-style: none; }
 
   /* Feature list */
   .feature-list { grid-template-columns: 1fr; }
-
-  /* Screenshots */
-  .screenshot-gallery { grid-template-columns: 1fr; }
 
   /* CTA strip */
   .cta-strip {

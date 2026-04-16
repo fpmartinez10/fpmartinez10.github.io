@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProcrastiPet — Focal Studio</title>
-  <meta name="description" content="ProcrastiPet turns your focus sessions into a pet collection. Beat procrastination one timer at a time. Privacy-first Android app." />
+  <title>WildFocus — Focal Studio</title>
+  <meta name="description" content="WildFocus turns your focus sessions into a pet collection. Beat procrastination one timer at a time. Privacy-first Android app." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -33,7 +33,7 @@
     <div class="container">
       <header class="app-detail-header">
         <p class="section-label"><a href="apps.html">← My Apps</a></p>
-        <h1 class="app-detail-title">ProcrastiPet</h1>
+        <h1 class="app-detail-title">WildFocus</h1>
         <p class="app-detail-tagline">Turn your focus sessions into a pet collection.</p>
         <div class="app-detail-meta">
           <span class="badge-platform">Android</span>
@@ -60,7 +60,7 @@
       <section class="detail-section">
         <h2>The Solution</h2>
         <p>
-          ProcrastiPet adds a tangible reward loop to the Pomodoro technique. Complete a focus
+          WildFocus adds a tangible reward loop to the Pomodoro technique. Complete a focus
           session and you earn a random pet — common, rare, or legendary. Your collection grows
           with your focus streak.
         </p>
@@ -146,36 +146,40 @@
       <section class="detail-section">
         <h2>Screenshots</h2>
 
-        <!-- REPLACE: drop real screenshots into assets/ and update the src and alt attributes below -->
-        <div class="screenshot-gallery">
-          <figure>
-            <img
-              src="assets/procrastipet-1.png"
-              alt="ProcrastiPet home screen showing a focus timer and pet summary"
-            />
-            <figcaption>Focus timer</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/procrastipet-2.png"
-              alt="ProcrastiPet pet collection screen showing earned creatures of various rarities"
-            />
-            <figcaption>Pet collection</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/procrastipet-3.png"
-              alt="ProcrastiPet achievements and streak screen"
-            />
-            <figcaption>Streaks &amp; achievements</figcaption>
-          </figure>
+        <div class="carousel" id="screenshotCarousel">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous screenshots" onclick="moveCarousel(-1)">&#8249;</button>
+
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Timer.png" alt="WildFocus focus timer — stay focused, save an animal" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Rescue.png" alt="WildFocus rescue screen — longer focus earns rarer animals" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Collection.png" alt="WildFocus collection screen — grow your animal collection" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Fun_facts.png" alt="WildFocus animal detail — learn fun facts about animals" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Progress.png" alt="WildFocus progress screen — track your focus, build discipline" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Achievements.png" alt="WildFocus achievements — achievements that motivate" />
+              </figure>
+            </div>
+          </div>
+
+          <button class="carousel-btn carousel-btn--next" aria-label="Next screenshots" onclick="moveCarousel(1)">&#8250;</button>
         </div>
       </section>
 
       <!-- ── 5. Download ────────────────────────────────────── -->
       <section class="detail-section">
         <div class="store-cta">
-          <h2>Get ProcrastiPet</h2>
+          <h2>Get WildFocus</h2>
           <p>Available on the Google Play Store for Android.</p>
           <!-- REPLACE: update the href below with your real Play Store URL -->
           <a
@@ -183,7 +187,7 @@
             class="btn-store"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Get ProcrastiPet on Google Play"
+            aria-label="Get WildFocus on Google Play"
           >
             <!-- Google Play icon (inline SVG, no external dependency) -->
             <svg width="20" height="20" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
@@ -232,7 +236,7 @@
       <section class="detail-section">
         <h2>Privacy</h2>
         <p>
-          ProcrastiPet collects no personal data. Everything stays on your device.
+          WildFocus collects no personal data. Everything stays on your device.
           Read the full <a href="privacy-policy.html">Privacy Policy</a> for details.
         </p>
       </section>
@@ -252,5 +256,31 @@
   </footer>
 
   <script src="assets/script.js"></script>
+  <script>
+    (function () {
+      var VISIBLE = 3;
+      var current = 0;
+      var track = document.getElementById('carouselTrack');
+      var slides = track ? track.querySelectorAll('.carousel-slide') : [];
+      var total = slides.length;
+
+      function update() {
+        var max = total - VISIBLE;
+        if (current < 0) current = 0;
+        if (current > max) current = max;
+        var pct = current * (100 / VISIBLE);
+        track.style.transform = 'translateX(-' + pct + '%)';
+        document.querySelector('.carousel-btn--prev').disabled = current === 0;
+        document.querySelector('.carousel-btn--next').disabled = current >= max;
+      }
+
+      window.moveCarousel = function (dir) {
+        current += dir;
+        update();
+      };
+
+      update();
+    }());
+  </script>
 </body>
 </html>
