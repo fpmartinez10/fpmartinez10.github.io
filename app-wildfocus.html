@@ -146,29 +146,33 @@
       <section class="detail-section">
         <h2>Screenshots</h2>
 
-        <!-- REPLACE: drop real screenshots into assets/ and update the src and alt attributes below -->
-        <div class="screenshot-gallery">
-          <figure>
-            <img
-              src="assets/wildfocus-1.png"
-              alt="WildFocus home screen showing a focus timer and pet summary"
-            />
-            <figcaption>Focus timer</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/wildfocus-2.png"
-              alt="WildFocus pet collection screen showing earned creatures of various rarities"
-            />
-            <figcaption>Pet collection</figcaption>
-          </figure>
-          <figure>
-            <img
-              src="assets/wildfocus-3.png"
-              alt="WildFocus achievements and streak screen"
-            />
-            <figcaption>Streaks &amp; achievements</figcaption>
-          </figure>
+        <div class="carousel" id="screenshotCarousel">
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous screenshots" onclick="moveCarousel(-1)">&#8249;</button>
+
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Timer.png" alt="WildFocus focus timer — stay focused, save an animal" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Rescue.png" alt="WildFocus rescue screen — longer focus earns rarer animals" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Collection.png" alt="WildFocus collection screen — grow your animal collection" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Fun_facts.png" alt="WildFocus animal detail — learn fun facts about animals" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Progress.png" alt="WildFocus progress screen — track your focus, build discipline" />
+              </figure>
+              <figure class="carousel-slide">
+                <img src="assets/screenshots/Achievements.png" alt="WildFocus achievements — achievements that motivate" />
+              </figure>
+            </div>
+          </div>
+
+          <button class="carousel-btn carousel-btn--next" aria-label="Next screenshots" onclick="moveCarousel(1)">&#8250;</button>
         </div>
       </section>
 
@@ -252,5 +256,31 @@
   </footer>
 
   <script src="assets/script.js"></script>
+  <script>
+    (function () {
+      var VISIBLE = 3;
+      var current = 0;
+      var track = document.getElementById('carouselTrack');
+      var slides = track ? track.querySelectorAll('.carousel-slide') : [];
+      var total = slides.length;
+
+      function update() {
+        var max = total - VISIBLE;
+        if (current < 0) current = 0;
+        if (current > max) current = max;
+        var pct = current * (100 / VISIBLE);
+        track.style.transform = 'translateX(-' + pct + '%)';
+        document.querySelector('.carousel-btn--prev').disabled = current === 0;
+        document.querySelector('.carousel-btn--next').disabled = current >= max;
+      }
+
+      window.moveCarousel = function (dir) {
+        current += dir;
+        update();
+      };
+
+      update();
+    }());
+  </script>
 </body>
 </html>
