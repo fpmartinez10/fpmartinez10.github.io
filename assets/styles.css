@@ -543,6 +543,23 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
+.brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.icon-tiktok {
+  color: #111;
+}
+
+.icon-reddit {
+  color: #ff4500;
+}
+
 .contact-item-label {
   font-size: 0.75rem;
   font-weight: 700;
