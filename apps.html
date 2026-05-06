@@ -14,7 +14,7 @@
   <meta property="twitter:url" content="https://fpmartinez10.github.io/apps.html" />
   <meta property="twitter:title" content="My Apps — Focal Studio" />
   <meta property="twitter:description" content="Android apps built by Focal Studio. Privacy-first, no tracking, no accounts." />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css?v=20260506" />
 </head>
 <body>
 
@@ -38,6 +38,8 @@
 
   <main>
 
+    <section class="app-strip-shell" data-app-carousel></section>
+
     <!-- ── Page header ───────────────────────────────────────── -->
     <div class="container">
       <header class="page-header">
@@ -47,14 +49,14 @@
     </div>
 
     <!-- ── Released apps ───────────────────────────────────────── -->
-    <section class="section">
+    <section class="section" id="released-apps">
       <div class="container">
         <p class="section-label">Released</p>
         <h2 class="section-title">Available Now</h2>
 
         <div class="app-grid">
 
-          <article class="app-card">
+          <article class="app-card" id="app-wildfocus">
             <div class="app-card-icon">🐾</div>
             <h3 class="app-card-name">WildFocus</h3>
             <p class="app-card-tagline">
@@ -66,41 +68,93 @@
             <a href="app-wildfocus.html" class="app-card-link">View App →</a>
           </article>
 
+          <article class="app-card" id="app-trailnote">
+            <div class="app-card-icon">🗺️</div>
+            <h3 class="app-card-name">TrailNote</h3>
+            <p class="app-card-tagline">
+              Placeholder release entry for testing the wider carousel lane with multiple live cards and anchors.
+            </p>
+            <span class="badge-platform">Android</span>
+            <a href="#app-trailnote" class="app-card-link">Placeholder Entry</a>
+          </article>
+
+          <article class="app-card" id="app-quietlist">
+            <div class="app-card-icon">📝</div>
+            <h3 class="app-card-name">QuietList</h3>
+            <p class="app-card-tagline">
+              Placeholder release entry to help verify scrolling, hover pause, and multi-item spacing in the carousel.
+            </p>
+            <span class="badge-platform">Android</span>
+            <a href="#app-quietlist" class="app-card-link">Placeholder Entry</a>
+          </article>
+
         </div>
 
       </div>
     </section>
 
     <!-- ── In development apps ───────────────────────────────────── -->
-    <section class="section">
+    <section class="section" id="in-development-apps">
       <div class="container">
         <p class="section-label">In Development</p>
         <h2 class="section-title">Coming This Year</h2>
 
         <div class="app-grid">
 
-          <!-- Apps in active development will go here -->
+          <article class="app-card" id="app-studysprint">
+            <div class="app-card-icon">📚</div>
+            <h3 class="app-card-name">StudySprint</h3>
+            <p class="app-card-tagline">
+              Placeholder in-development card used to test the middle carousel lane and anchor linking behavior.
+            </p>
+            <span class="badge-platform">Android</span>
+            <a href="#app-studysprint" class="app-card-link">Placeholder Entry</a>
+          </article>
+
+          <article class="app-card" id="app-pantrymap">
+            <div class="app-card-icon">🥫</div>
+            <h3 class="app-card-name">PantryMap</h3>
+            <p class="app-card-tagline">
+              Placeholder in-development card for checking animation with multiple items in a narrower lane.
+            </p>
+            <span class="badge-platform">Android</span>
+            <a href="#app-pantrymap" class="app-card-link">Placeholder Entry</a>
+          </article>
 
         </div>
-
-        <p class="empty-state">No apps currently in active development. Check back soon!</p>
 
       </div>
     </section>
 
     <!-- ── Coming soon apps ───────────────────────────────────────── -->
-    <section class="section">
+    <section class="section" id="coming-soon-apps">
       <div class="container">
         <p class="section-label">Coming Soon</p>
         <h2 class="section-title">Future Builds</h2>
 
         <div class="app-grid">
 
-          <!-- Apps coming soon will go here -->
+          <article class="app-card" id="app-daypebble">
+            <div class="app-card-icon">🪨</div>
+            <h3 class="app-card-name">DayPebble</h3>
+            <p class="app-card-tagline">
+              Placeholder coming-soon card so the last carousel lane has enough items to test motion and spacing.
+            </p>
+            <span class="badge-platform">Android</span>
+            <a href="#app-daypebble" class="app-card-link">Placeholder Entry</a>
+          </article>
+
+          <article class="app-card" id="app-hushtimer">
+            <div class="app-card-icon">🌙</div>
+            <h3 class="app-card-name">HushTimer</h3>
+            <p class="app-card-tagline">
+              Placeholder coming-soon card to verify links from the carousel still land on the right future-app entry.
+            </p>
+            <span class="badge-platform">Android</span>
+            <a href="#app-hushtimer" class="app-card-link">Placeholder Entry</a>
+          </article>
 
         </div>
-
-        <p class="empty-state">No apps announced yet. Subscribe below for updates.</p>
 
       </div>
     </section>
@@ -118,6 +172,6 @@
     </div>
   </footer>
 
-  <script src="assets/script.js"></script>
+  <script src="assets/script.js?v=20260506"></script>
 </body>
 </html>
