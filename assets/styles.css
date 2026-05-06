@@ -194,6 +194,141 @@ ul { list-style: none; }
   margin-bottom: 2rem;
 }
 
+/* ── 6A. Global app carousel strip ─────────────────────────── */
+.app-strip-shell {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 242, 238, 0.92));
+  border-bottom: 1px solid var(--border);
+}
+
+.app-strip {
+  padding: 1.5rem 0 1.75rem;
+}
+
+.app-strip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.app-strip-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.app-strip-copy {
+  max-width: 32rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.app-strip-lanes {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.app-lane {
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.app-lane-head {
+  padding: 1rem 1rem 0.8rem;
+  border-bottom: 1px solid #ece6de;
+}
+
+.app-lane-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.app-lane-viewport {
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.app-lane-track {
+  display: flex;
+  gap: 0.85rem;
+  width: max-content;
+  min-width: 100%;
+}
+
+.app-lane-track.is-static {
+  flex-wrap: wrap;
+}
+
+.app-lane-track.is-animated {
+  flex-wrap: nowrap;
+  animation: lane-pan var(--lane-duration, 20s) linear infinite alternate;
+  will-change: transform;
+}
+
+.app-lane:hover .app-lane-track.is-animated,
+.app-lane:focus-within .app-lane-track.is-animated {
+  animation-play-state: paused;
+}
+
+.app-lane-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 96px;
+  padding: 0.85rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fffdfb 0%, #f4efe8 100%);
+  color: var(--text);
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s, box-shadow 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.app-lane-link:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+  border-color: #d6cdc3;
+}
+
+.app-lane-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.app-lane-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.app-lane-empty {
+  padding: 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@keyframes lane-pan {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(var(--lane-distance, 0px) * -1)); }
+}
+
 /* ── 7. Buttons ─────────────────────────────────────────────── */
 .btn {
   display: inline-block;
@@ -717,6 +852,7 @@ a:focus-visible,
 button:focus-visible,
 .nav-links a:focus-visible,
 .btn:focus-visible,
+.app-lane-link:focus-visible,
 .app-card-link:focus-visible,
 .contact-item a:focus-visible {
   outline: 2px solid var(--brand);
@@ -798,7 +934,45 @@ button:focus-visible,
   font-size: 0.95rem;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .app-lane-track.is-animated {
+    animation: none;
+  }
+
+  .app-lane-link,
+  .app-card,
+  .btn,
+  .contact-item,
+  .carousel-track,
+  .carousel-btn {
+    transition: none;
+  }
+
+  .app-lane-link:hover,
+  .app-card:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
+
 /* ── 22. Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .app-strip-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-strip-lanes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .app-lane--released {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 640px) {
   /* Nav */
   .nav-toggle {
@@ -833,6 +1007,31 @@ button:focus-visible,
   /* Hero */
   .hero { padding: 3rem 0 2.5rem; }
   .hero-title { font-size: 1.7rem; }
+
+  .app-strip {
+    padding: 1.25rem 0 1.5rem;
+  }
+
+  .app-strip-lanes {
+    grid-template-columns: 1fr;
+  }
+
+  .app-lane--released {
+    grid-column: auto;
+  }
+
+  .app-lane-head {
+    padding: 0.95rem 0.95rem 0.75rem;
+  }
+
+  .app-lane-viewport,
+  .app-lane-empty {
+    padding: 0.95rem;
+  }
+
+  .app-lane-link {
+    min-width: 88px;
+  }
 
   /* Sections */
   .section { padding: 2.5rem 0; }
