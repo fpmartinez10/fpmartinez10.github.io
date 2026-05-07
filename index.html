@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe P. Martinez — Bioinformatician</title>
+  <meta name="description" content="Pipeline Engineer at CRUK. Epigenomics, DNA methylation analysis, Nextflow workflows, cancer biomarkers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner container">
+      <span class="nav-logo">fpmartinez10</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">Pipeline Engineer · Bioinformatician</p>
+      <h1 class="hero-name">Felipe P. Martinez</h1>
+      <p class="hero-tagline">
+        Epigenomics &amp; DNA methylation pipelines for cancer biomarker discovery.<br />
+        Nextflow &nbsp;·&nbsp; WGBS &nbsp;·&nbsp; MBD-seq &nbsp;·&nbsp; R packages &nbsp;·&nbsp; HPC &amp; AWS
+      </p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">View Work</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container section-grid">
+      <div class="section-label"><span class="label-text">About</span></div>
+      <div class="section-content">
+        <h2 class="section-heading">Background</h2>
+        <p>
+          I am a pipeline engineer and bioinformatician at
+          <a href="https://www.cruk.manchester.ac.uk/Our-Research/Cancer-Biomarker-Centre" target="_blank" rel="noopener">CRUK National Biomarker Centre</a>
+          in Manchester. My work focuses on epigenomics and DNA methylation analysis in the context of
+          cancer biomarker discovery — designing, building, and maintaining production Nextflow pipelines
+          for whole-genome bisulfite sequencing (WGBS), MBD-seq enrichment assays, T7 demultiplexing,
+          and dilution-based methylation workflows.
+        </p>
+        <p>
+          I build pipelines that are reproducible, containerised, and maintainable across SLURM HPC
+          clusters and AWS cloud environments. Alongside pipeline engineering, I develop R packages for
+          methylation data analysis using Bioconductor conventions, and maintain CI/CD workflows for
+          automated pipeline testing with GitHub Actions.
+        </p>
+        <!-- Remove or replace the line below with your actual degree, or delete the paragraph entirely -->
+        <!-- <p>I hold a [degree] in [field] from [institution].</p> -->
+        <div class="about-meta">
+          <div class="meta-item">
+            <span class="meta-label">Location</span>
+            <span class="meta-value">Manchester, UK</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Employer</span>
+            <span class="meta-value">CRUK National Biomarker Centre</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Epigenomics · Cancer biomarkers · Pipelines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="work">
+    <div class="container section-grid">
+      <div class="section-label"><span class="label-text">Work</span></div>
+      <div class="section-content">
+        <h2 class="section-heading">Selected Projects</h2>
+
+        <article class="project-card project-featured">
+          <div class="project-header">
+            <h3 class="project-title">mesa — R package</h3>
+            <a href="https://github.com/cruk-mi/mesa" class="project-link" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+          <p class="project-desc">
+            Methylation Enrichment Sequencing Analysis: a Bioconductor-compatible R package for MBD-seq
+            data QC, normalisation, and differential methylation analysis. Provides tidy interfaces for
+            working with methylation enrichment data at scale. Developed at CRUK National Biomarker Centre.
+          </p>
+          <div class="project-tags">
+            <span class="tag">R</span>
+            <span class="tag">Bioconductor</span>
+            <span class="tag">MBD-seq</span>
+            <span class="tag">epigenomics</span>
+            <span class="tag">S4</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">WGBS / nf-core methylseq Pipeline</h3>
+            <a href="https://github.com/fpmartinez10/methylation-pipeline" class="project-link" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+          <p class="project-desc">
+            End-to-end whole-genome bisulfite sequencing pipeline in Nextflow DSL2, following nf-core
+            methylseq conventions. Covers adapter trimming (Trim Galore), bisulfite alignment (Bismark),
+            deduplication, CpG extraction, and DMR calling. Configurable for SLURM HPC and AWS Batch via
+            Singularity containers. Uses public ENCODE WGBS data for demonstration.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Nextflow</span>
+            <span class="tag">nf-core</span>
+            <span class="tag">Bismark</span>
+            <span class="tag">Singularity</span>
+            <span class="tag">AWS</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">HPC Nextflow Templates</h3>
+            <a href="https://github.com/fpmartinez10/hpc-nextflow-templates" class="project-link" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+          <p class="project-desc">
+            Production-ready Nextflow DSL2 skeleton workflows for SLURM HPC environments.
+            Covers executor configuration, per-process resource profiles, Singularity execution,
+            environment module loading, and GitHub Actions CI for automated pipeline validation.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Nextflow</span>
+            <span class="tag">SLURM</span>
+            <span class="tag">Singularity</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Bash</span>
+          </div>
+        </article>
+
+        <div class="work-footer">
+          <p class="work-note">
+            Production pipeline work is in private repositories at CRUK. The above demonstrates
+            equivalent methodology applied to publicly available datasets.
+          </p>
+          <p class="work-note">
+            I also build small Android apps independently through
+            <a href="https://focalstudio.github.io" target="_blank" rel="noopener">Focal Studio</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container section-grid">
+      <div class="section-label"><span class="label-text">Skills</span></div>
+      <div class="section-content">
+        <h2 class="section-heading">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4 class="skill-group-title">Languages</h4>
+            <ul class="skill-list">
+              <li>Python (NumPy, pandas, Biopython)</li>
+              <li>R (Bioconductor, tidyverse, ggplot2)</li>
+              <li>Bash / Shell scripting</li>
+              <li>R package development (roxygen2, testthat, S4)</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4 class="skill-group-title">Epigenomics &amp; NGS</h4>
+            <ul class="skill-list">
+              <li>WGBS / bisulfite sequencing (Bismark, bsmap2)</li>
+              <li>MBD-seq enrichment analysis</li>
+              <li>nf-core methylseq (and custom DSL2 extensions)</li>
+              <li>T7 demultiplexing &amp; dilution workflows</li>
+              <li>DMR calling (DSS, MethylKit, bsseq)</li>
+              <li>Trim Galore / FastQC / MultiQC</li>
+              <li>samtools / bedtools / deeptools</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4 class="skill-group-title">Workflow &amp; Infrastructure</h4>
+            <ul class="skill-list">
+              <li>Nextflow DSL2</li>
+              <li>SLURM / HPC job scheduling</li>
+              <li>Docker &amp; Singularity</li>
+              <li>AWS (S3, Batch, EC2)</li>
+              <li>GitHub Actions (CI/CD for pipelines)</li>
+              <li>Conda / Mamba</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h4 class="skill-group-title">Analysis &amp; Reporting</h4>
+            <ul class="skill-list">
+              <li>R Markdown / Quarto</li>
+              <li>ggplot2 / ComplexHeatmap / pheatmap</li>
+              <li>Bioconductor (minfi, methylKit, ChAMP)</li>
+              <li>Jupyter Notebooks</li>
+              <li>MultiQC custom modules</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact">
+    <div class="container section-grid">
+      <div class="section-label"><span class="label-text">Contact</span></div>
+      <div class="section-content">
+        <h2 class="section-heading">Get in Touch</h2>
+        <p>
+          I am open to conversations about bioinformatics pipeline engineering roles,
+          epigenomics research positions, and collaborations in cancer genomics.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:eriperules@gmail.com" class="contact-item">
+            <span class="contact-icon">&#9993;</span>
+            <span>eriperules@gmail.com</span>
+          </a>
+          <a href="https://github.com/fpmartinez10" class="contact-item" target="_blank" rel="noopener">
+            <span class="contact-icon">&#8599;</span>
+            <span>github.com/fpmartinez10</span>
+          </a>
+          <a href="https://linkedin.com/in/felipe-perez-martinez-263a94206" class="contact-item" target="_blank" rel="noopener">
+            <span class="contact-icon">&#8599;</span>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>Felipe P. Martinez</span>
+      <span class="footer-sep">·</span>
+      <span>fpmartinez10.github.io</span>
+      <span class="footer-sep">·</span>
+      <span>Plain HTML/CSS</span>
+    </div>
+  </footer>
+
+</body>
+</html>
