@@ -179,14 +179,6 @@ p + p { margin-top: 1rem; }
   color: var(--text-secondary);
 }
 
-.section-heading {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  letter-spacing: -0.01em;
-  margin-bottom: 2rem;
-  line-height: 1.3;
-}
 
 /* ── ABOUT META ──────────────────────────────── */
 .about-meta {
