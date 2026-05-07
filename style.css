@@ -172,18 +172,18 @@ p + p { margin-top: 1rem; }
 
 .label-text {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .section-heading {
-  font-size: 1.75rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: 2rem;
   line-height: 1.3;
 }
