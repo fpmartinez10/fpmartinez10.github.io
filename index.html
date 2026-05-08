@@ -111,20 +111,21 @@
 
         <article class="project-card">
           <div class="project-header">
-            <h3 class="project-title">WGBS / nf-core methylseq Pipeline</h3>
-            <a href="https://github.com/fpmartinez10/methylation-pipeline" class="project-link" target="_blank" rel="noopener">GitHub ↗</a>
+            <h3 class="project-title">Tumor Microbiome Pipeline (MIMIC)</h3>
+            <a href="https://github.com/fpmartinez10/MIMIC-tumor-microbiome-pipeline" class="project-link" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
           <p class="project-desc">
-            End-to-end whole-genome bisulfite sequencing pipeline in Nextflow DSL2, following nf-core
-            methylseq conventions. Covers adapter trimming (Trim Galore), bisulfite alignment (Bismark),
-            deduplication, CpG extraction, and DMR calling. Configurable for SLURM HPC and AWS Batch via
-            Singularity containers. Uses public ENCODE WGBS data for demonstration.
+            Metagenomics and metatranscriptomics pipeline for gut microbiome profiling in pediatric brain tumor
+            patients (MIMIC cohort). Covers human read removal (GRCh38 + CHM13), taxonomic classification
+            (Kraken2), abundance re-estimation (Bracken2), alpha/beta diversity analysis, and downstream R
+            statistical analysis across tumor subclasses.
           </p>
           <div class="project-tags">
-            <span class="tag">Nextflow</span>
-            <span class="tag">nf-core</span>
-            <span class="tag">Bismark</span>
-            <span class="tag">Singularity</span>
+            <span class="tag">Kraken2</span>
+            <span class="tag">Bracken2</span>
+            <span class="tag">Snakemake</span>
+            <span class="tag">Metagenomics</span>
+            <span class="tag">R</span>
           </div>
         </article>
 
@@ -170,7 +171,7 @@
             <h4 class="skill-group-title">Languages</h4>
             <ul class="skill-list">
               <li>Python (NumPy, pandas, Biopython)</li>
-              <li>R (Bioconductor, tidyverse, ggplot2)</li>
+              <li>R (Bioconductor, tidyverse, ggplot2, phyloseq, ALDEx2, vegan)</li>
               <li>Bash / Shell scripting</li>
               <li>R package development (roxygen2, testthat, S4)</li>
             </ul>
@@ -180,13 +181,13 @@
             <ul class="skill-list">
               <li>WGBS / bisulfite sequencing (Bismark, bsmap2)</li>
               <li>MBD-seq enrichment analysis</li>
-              <li>Metagenomics (16S, WGS, taxonomic profiling)</li>
+              <li>Metagenomics — Kraken2 / Bracken2 (16S, WGS, taxonomic profiling)</li>
               <li>nf-core methylseq (and custom DSL2 extensions)</li>
               <li>T7 demultiplexing &amp; dilution workflows</li>
               <li>DMR calling (DSS, bsseq)</li>
               <li>GenomicRanges / SummarizedExperiment</li>
-              <li>Trim Galore / FastQC / MultiQC</li>
-              <li>samtools / bedtools</li>
+              <li>Trim Galore / Trimmomatic / FastQC / MultiQC</li>
+              <li>samtools / bedtools / Bowtie2</li>
             </ul>
           </div>
           <div class="skill-group">
