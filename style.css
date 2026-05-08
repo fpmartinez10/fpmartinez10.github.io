@@ -224,6 +224,9 @@ p + p { margin-top: 1rem; }
 .project-featured { border-color: var(--accent-dim); }
 .project-featured:hover { border-color: var(--accent); }
 
+.project-highlight { border-color: #1e3460; }
+.project-highlight:hover { border-color: var(--accent-dim); }
+
 .project-header {
   display: flex;
   justify-content: space-between;
